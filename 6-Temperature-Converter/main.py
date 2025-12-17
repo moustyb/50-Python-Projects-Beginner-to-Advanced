@@ -1,89 +1,47 @@
-# Project 6: Unit Converter
-# Description: Convert common everyday units (distance, weight, temperature, height)
+# main.py
 
-def miles_to_km(miles):
-    return miles * 1.60934
+def c_to_f(c): return (c * 9/5) + 32
+def f_to_c(f): return (f - 32) * 5/9
+def c_to_k(c): return c + 273.15
+def k_to_c(k): return k - 273.15
+def f_to_k(f): return c_to_k(f_to_c(f))
+def k_to_f(k): return c_to_f(k_to_c(k))
 
-def km_to_miles(km):
-    return km / 1.60934
+def convert(value, from_unit, to_unit):
+    u = from_unit.lower()
+    v = to_unit.lower()
+    if u == v: return value
+    if u == "c":
+        if v == "f": return c_to_f(value)
+        if v == "k": return c_to_k(value)
+    elif u == "f":
+        if v == "c": return f_to_c(value)
+        if v == "k": return f_to_k(value)
+    elif u == "k":
+        if v == "c": return k_to_c(value)
+        if v == "f": return k_to_f(value)
+    raise ValueError("Unsupported unit. Use C, F, or K.")
 
-def pounds_to_kg(pounds):
-    return pounds * 0.453592
-
-def kg_to_pounds(kg):
-    return kg / 0.453592
-
-def fahrenheit_to_celsius(f):
-    return (f - 32) * 5/9
-
-def celsius_to_fahrenheit(c):
-    return (c * 9/5) + 32
-
-def feet_inches_to_cm(feet, inches=0):
-    return (feet * 30.48) + (inches * 2.54)
-
-def cm_to_feet_inches(cm):
-    feet = int(cm // 30.48)
-    inches = round((cm % 30.48) / 2.54)
-    return feet, inches
-
-def converter():
-    print("🔄 Welcome to the Unit Converter!")
-    print("Choose conversion:")
-    print("1. Miles → Kilometers")
-    print("2. Kilometers → Miles")
-    print("3. Pounds → Kilograms")
-    print("4. Kilograms → Pounds")
-    print("5. Fahrenheit → Celsius")
-    print("6. Celsius → Fahrenheit")
-    print("7. Feet/Inches → Centimeters")
-    print("8. Centimeters → Feet/Inches")
-    print("9. Quit")
-
+def main():
+    print("Temperature Converter (C/F/K)")
+    print("Enter value and units like: 100 C F (from C to F)")
     while True:
-        choice = input("Enter choice (1-9): ")
-
-        if choice == "9":
-            print("Goodbye!")
-            break
-
         try:
-            if choice in ["1", "2"]:
-                value = float(input("Enter distance: "))
-                if choice == "1":
-                    print(f"{value} miles = {miles_to_km(value):.2f} km")
-                else:
-                    print(f"{value} km = {km_to_miles(value):.2f} miles")
-
-            elif choice in ["3", "4"]:
-                value = float(input("Enter weight: "))
-                if choice == "3":
-                    print(f"{value} lbs = {pounds_to_kg(value):.2f} kg")
-                else:
-                    print(f"{value} kg = {kg_to_pounds(value):.2f} lbs")
-
-            elif choice in ["5", "6"]:
-                value = float(input("Enter temperature: "))
-                if choice == "5":
-                    print(f"{value}°F = {fahrenheit_to_celsius(value):.2f}°C")
-                else:
-                    print(f"{value}°C = {celsius_to_fahrenheit(value):.2f}°F")
-
-            elif choice == "7":
-                feet = int(input("Enter feet: "))
-                inches = int(input("Enter inches: "))
-                print(f"{feet} ft {inches} in = {feet_inches_to_cm(feet, inches):.2f} cm")
-
-            elif choice == "8":
-                cm = float(input("Enter height in cm: "))
-                feet, inches = cm_to_feet_inches(cm)
-                print(f"{cm} cm = {feet} ft {inches} in")
-
-            else:
-                print("Invalid choice. Please try again.")
-
-        except ValueError:
-            print("Invalid input. Please enter numbers only.")
+            line = input("> ").strip()
+            if line.lower() in {"q", "quit", "exit"}:
+                print("Goodbye.")
+                break
+            parts = line.split()
+            if len(parts) != 3:
+                print("Format: <value> <from_unit> <to_unit> (e.g., 32 F C)")
+                continue
+            value = float(parts[0])
+            from_unit = parts[1]
+            to_unit = parts[2]
+            result = convert(value, from_unit, to_unit)
+            print(f"{value} {from_unit.upper()} = {result:.2f} {to_unit.upper()}")
+        except ValueError as e:
+            print(f"Error: {e}")
 
 if __name__ == "__main__":
-    converter()
+    main()
