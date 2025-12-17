@@ -47,7 +47,7 @@ Most learners struggle when they only follow tutorials or read theory — the kn
 2. ✂️ **Rock-Paper-Scissors**  
    Classic game against the computer using random choices. Teaches logic, comparisons, and handling multiple outcomes.  
 
-3. ➕ **Simple Calculator**  
+3. ➕ **Basic Calculator**  
    Performs basic arithmetic operations. Reinforces functions, user input, and error handling.  
 
 4. 📖 **Word Counter**  
