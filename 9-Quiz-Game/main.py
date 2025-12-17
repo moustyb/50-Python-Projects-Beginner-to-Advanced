@@ -1,3 +1,8 @@
+# Project 9: Quiz Game
+# Description: A simple multiple-choice quiz that tests knowledge and tracks score
+
+def run_quiz():
+
 questions = [
     {
         "question": "What is the capital of France?",
@@ -50,3 +55,24 @@ questions = [
         "answer": "B"
     }
 ]
+    
+    
+    score = 0
+    print("📝 Welcome to the Quiz Game!\n")
+
+    for q in questions:
+        print(q["question"])
+        for option in q["options"]:
+            print(option)
+        answer = input("Enter your answer (A-D): ").upper()
+
+        if answer == q["answer"]:
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print(f"❌ Wrong! Correct answer: {q['answer']}\n")
+
+    print(f"Your final score: {score}/{len(questions)}")
+
+if __name__ == "__main__":
+    
