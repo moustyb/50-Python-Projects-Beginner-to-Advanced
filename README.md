@@ -207,7 +207,7 @@ Most learners struggle when they only follow tutorials or read theory — the kn
 ## 🚀 How to Use
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/50-python-projects.git
+   git clone https://github.com/moustyb/50-Python-Projects-Beginner-to-Advanced.git
    
 2. Navigate to a project folder:
     ```bash
