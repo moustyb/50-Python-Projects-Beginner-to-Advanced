@@ -65,8 +65,8 @@ Most learners struggle when they only follow tutorials or read theory — the kn
 8. ⚖️ **Unit Converter**  
    Converts between units (length, weight, etc.). Reinforces dictionaries, functions, and modular design.  
 
-9. 🔒 **Password Strength Checker**  
-   Evaluates password strength based on length, characters, and complexity. Introduces regex, string analysis, and security basics.  
+9. 🎯 **Quiz Game**  
+   A simple multiple‑choice quiz game that challenges knowledge across general topics. It presents questions, accepts user input, checks correctness, and tracks the final score.
 
 10. 📅 **Calendar Reminder**  
    Lets users set and view reminders. Builds skills in working with dates, lists, and user interaction.  
