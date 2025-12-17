@@ -76,5 +76,3 @@ Good luck on your learning journey — may these projects inspire you to become 
 
 **Learn by building. Grow by creating. Share to inspire.**
 
-   ```bash
-   git clone https://github.com/yourusername/50-python-projects.git
