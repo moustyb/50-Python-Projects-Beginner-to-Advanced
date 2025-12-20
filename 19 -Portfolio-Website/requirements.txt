@@ -1,0 +1,27 @@
+🖥️ Project 19 — Portfolio Website (Flask)
+
+✅ What this project does
+A simple personal website built using the Flask web framework.  
+It introduces:
+- Routing
+- Serving HTML pages
+- Basic web development concepts
+- Running a local web server
+
+✅ How to install Flask
+pip install flask
+
+✅ How to run the project
+python main.py  
+Then open your browser and go to:
+http://127.0.0.1:5000
+
+✅ main.py
+(This section normally contains the Flask code, but you requested no code inside.)
+
+✅ requirements.txt
+flask
+
+✅ Summary
+This project is your first step into web development.  
+It teaches routing, serving HTML, and running a local server — all in one simple file.
